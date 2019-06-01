@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Assure that the kernel has module support.
+[ -e /proc/ksyms -o -e /proc/modules ] || exit 0
+
+case "${1}" in
+    start)
+
+        echo "Loading Network Modules"
+	/sbin/modprobe brcmfmac >/dev/null
+	/sbin/modprobe sha256_generic >/dev/null
+	;;
+
+    *)
+        echo "Usage: ${0} {start}"
+        exit 1
+        ;;
+esac

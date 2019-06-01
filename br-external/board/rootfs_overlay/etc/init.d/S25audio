@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# Assure that the kernel has module support.
+[ -e /proc/ksyms -o -e /proc/modules ] || exit 0
+
+case "${1}" in
+    start)
+
+        echo "Loading Audio Modules"
+	/sbin/modprobe fixed >/dev/null
+	/sbin/modprobe uio_pdrv_genirq >/dev/null
+	/sbin/modprobe snd_soc_bcm2835_i2s >/dev/null
+	/sbin/modprobe snd_soc_pcm5102a >/dev/null
+	/sbin/modprobe snd_soc_rpi_simple_soundcard >/dev/null
+	;;
+
+    *)
+        echo "Usage: ${0} {start}"
+        exit 1
+        ;;
+esac

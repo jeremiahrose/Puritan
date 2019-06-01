@@ -1,5 +1,0 @@
-#!/bin/sh
-# Load Wifi driver
-printf "Loading Wifi Driver: "
-/sbin/modprobe brcmfmac
-[ $? = 0 ] && echo "OK" || echo "FAIL"
