@@ -12,6 +12,8 @@ case "${1}" in
 	/sbin/modprobe snd_soc_bcm2835_i2s >/dev/null
 	/sbin/modprobe snd_soc_pcm5102a >/dev/null
 	/sbin/modprobe snd_soc_rpi_simple_soundcard >/dev/null
+	chgrp -R audio /dev/snd
+	chmod -R g+r /dev/snd
 	;;
 
     *)
