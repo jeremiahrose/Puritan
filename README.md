@@ -1,6 +1,6 @@
-# RPi0W
+# RPi0w-PD
 
-## A power-loss resistant, fast boot embedded linux for running PD on RPi0W.
+## A power-loss resistant, fast boot embedded linux for running Pure Data on the Raspberry Pi Zero W.
 
 ###### Features:
 - Instant off: Power can be removed without proper shutdown
@@ -24,7 +24,7 @@ git clone https://github.com/jeremiahrose/RPi0w-PD.git
 2. Initialise submodules to download the Buildroot source:
 
 ```
-cd RPiow-PD
+cd RPi0w-PD
 git submodule init
 git submodule update
 ```
@@ -43,7 +43,9 @@ To build the system simply run:
 make
 ```
 It will take between 40 minutes and 3 hours depending on your system and internet connection.
-Note that all `make` commands should be run from the `buildroot` directory, and all `git` should be run from the `RPi0w-PD` directory.
+After it is finished, the SD card image found in `output/images` can be flashed directly to your SD and booted up on the RPi0w!
+
+Note that all `make` commands should be run from the `buildroot` directory, and all `git` commands should be run from the `RPi0w-PD` directory.
 
 To make changes to the Buildroot configuration run
 ```
