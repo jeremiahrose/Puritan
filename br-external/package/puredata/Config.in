@@ -1,0 +1,7 @@
+config BR2_PACKAGE_PUREDATA
+	bool "puredata"
+	help
+	  Pure Data (or just Pd) is an open source visual programming 
+	  language for multimedia.
+
+	  https://puredata.info/
