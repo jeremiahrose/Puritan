@@ -15,6 +15,12 @@
 
 ###### How to use:
 
+0. Install dependencies:
+
+```
+sudo apt install sed make binutils build-essential gcc g++ bash patch gzip bzip2 perl tar cpio python unzip rsync bc wget libncurses5-dev git
+```
+
 1. Clone the repository: 
 
 ```
