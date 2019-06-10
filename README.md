@@ -1,19 +1,19 @@
-#RPi0W
+# RPi0W
 
-##A power-loss resistant, fast boot embedded linux for running PD on RPi0W.
+## A power-loss resistant, fast boot embedded linux for running PD on RPi0W.
 
-######Features:
+###### Features:
 - Instant off: Power can be removed without proper shutdown
 - Corruption proof: Uses a read-only squashfs root filesystem
 - Stripped down Kernel: Boots in about 4 seconds
 - Automatically provides a wifi hotspot with ssh login
 - Designed for use with the HifiBerry DAC (loads drivers on boot)
 
-######Not yet implemented:
+###### Not yet implemented:
 - Run Pure Data on boot
 - Enable writing to the filesystem in controlled circumstances to install packages
 
-######How to use:
+###### How to use:
 
 1. Clone the repository: 
 
@@ -65,7 +65,7 @@ make linux-update-defconfig
 I recommend that you always run `make savedefconfig` and `make linux-update-defconfig` after
 every time you use the Buildroot and Kernel configuration tools respectively.
 
-######Note on branches:
+###### Note on branches:
 After changing branches, running git pull, or otherwise changing the contents of
 br-external/configs, the buildroot configuration **must** be updated again with:
 ```
