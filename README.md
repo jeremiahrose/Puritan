@@ -3,18 +3,19 @@
 ## A power-loss resistant, fast boot embedded linux for running Pure Data on the Raspberry Pi Zero W.
 
 ###### Features:
-- Instant off: Power can be removed without proper shutdown
+- Stripped down Kernel: Boots to Pure Data in about 6 seconds
+- Instant off: Power can be removed without shutdown
 - Corruption proof: Uses a read-only squashfs root filesystem
-- Stripped down Kernel: Boots in about 4 seconds
 - Automatically provides a wifi hotspot with ssh login
 - Designed for use with the HifiBerry DAC (loads drivers on boot)
 
-###### Not yet implemented:
-- Run Pure Data on boot
+###### To do:
 - Enable writing to the filesystem in controlled circumstances to install packages
+- Reduce boot time to 3 seconds or less
 
-###### How to use:
+###### How to compile:
 
+Note: you are building an operating system from scratch! You will need about 10GB of hard drive space, a fast internet connection, and a decent desktop computer or server running linux (this guide is for Debian/Ubuntu - other distributions will work but you will need to figure out the dependencies yourself).
 0. Install dependencies:
 
 ```
@@ -79,3 +80,15 @@ br-external/configs, the buildroot configuration **must** be updated again with:
 ```
 make BR2_EXTERNAL=../br-external tpt6_defconfig
 ```
+
+###### How to use:
+
+You can change the Pure Data patch that is run at boot by replacing this file:
+```
+br-external/board/rootfs_overlay/home/jez/test.pd
+```
+If you want to use a different file, simply adjust 
+```
+br-external/board/rootfs_overlay/etc/init.d/S26puredata
+```
+to point to the new file and run `make` to rebuild the system (it will run much quicker than the initial build).
