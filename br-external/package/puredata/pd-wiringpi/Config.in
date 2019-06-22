@@ -1,0 +1,7 @@
+config BR2_PACKAGE_PUREDATA_PDWIRINGPI
+	bool "pd-wiringpi"
+	select BR2_PACKAGE_WIRINGPI
+	help
+	  Wiring Pi external for Pure Data
+
+	  http://wiringpi.com/
