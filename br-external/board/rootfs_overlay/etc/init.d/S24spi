@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# Assure that the kernel has module support.
+[ -e /proc/ksyms -o -e /proc/modules ] || exit 0
+
+case "${1}" in
+    start)
+
+        echo "Loading SPI modules"
+	/sbin/modprobe spi-bcm2835aux >/dev/null
+	/sbin/modprobe spi-bcm2835 >/dev/null
+	/sbin/modprobe spi-gpio >/dev/null
+	/sbin/modprobe spi-bitbang >/dev/null
+	/sbin/modprobe spidev >/dev/null
+	# Do I need to change the permissions?
+	#chgrp -R audio /dev/snd
+	#chmod -R g+rw /dev/snd
+	;;
+
+    *)
+        echo "Usage: ${0} {start}"
+        exit 1
+        ;;
+esac

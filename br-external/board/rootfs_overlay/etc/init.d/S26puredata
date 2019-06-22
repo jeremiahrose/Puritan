@@ -4,7 +4,7 @@ case "${1}" in
     start)
 
         echo "Starting Pure Data"
-	/usr/bin/pd -nogui /home/jez/test.pd &
+	/usr/bin/pd -nogui -noadc /home/jez/tpt6.pd &
 	;;
 
     *)
