@@ -5,7 +5,3 @@ config BR2_PACKAGE_PUREDATA
 	  language for multimedia.
 
 	  https://puredata.info/
-
-if BR2_PACKAGE_PUREDATA 
-	source "package/puredata/pd-wiringpi/Config.in"
-endif

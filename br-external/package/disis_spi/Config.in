@@ -1,0 +1,8 @@
+config BR2_PACKAGE_DISIS_SPI
+	bool "disis_spi"
+	select BR2_PACKAGE_WIRINGPI
+	depends on BR2_PACKAGE_PUREDATA
+	help
+	  MCP3008 interface for Pure Data on Raspberry Pi.
+
+	  http://wiringpi.com/
