@@ -11,7 +11,7 @@
 # default value.
 
 #Port 22
-#AddressFamily any
+AddressFamily inet
 #ListenAddress 0.0.0.0
 #ListenAddress ::
 
@@ -84,14 +84,14 @@ AuthorizedKeysFile	.ssh/authorized_keys
 #AllowAgentForwarding yes
 #AllowTcpForwarding yes
 #GatewayPorts no
-#X11Forwarding no
-#X11DisplayOffset 10
-#X11UseLocalhost yes
+X11Forwarding yes
+X11DisplayOffset 10
+X11UseLocalhost no
 #PermitTTY yes
 #PrintMotd yes
 #PrintLastLog yes
 #TCPKeepAlive yes
-#PermitUserEnvironment no
+PermitUserEnvironment yes
 #Compression delayed
 #ClientAliveInterval 0
 #ClientAliveCountMax 3

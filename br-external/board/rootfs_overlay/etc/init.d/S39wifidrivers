@@ -9,6 +9,9 @@ case "${1}" in
         echo "Loading Network Modules"
 	/sbin/modprobe brcmfmac >/dev/null
 	/sbin/modprobe sha256_generic >/dev/null
+	# Fix for ssh -X login
+	touch /tmp/.Xauthority
+	chown jez /tmp/.Xauthority
 	;;
 
     *)
