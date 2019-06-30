@@ -961,9 +961,12 @@ ifup () {
 
 		ifupdown_lock
 
-		# Busybox ifup has to be forced with -f
-		/sbin/ifup -v -f "$WPA_IFACE=$WPA_LOGICAL_IFACE"
-
+		if [ -n "$IFSTATE_FILE" ] && grep -q "^$WPA_IFACE=$WPA_IFACE" "$IFSTATE_FILE"; then
+			# Force settings over the unconfigured "master" IFACE
+			/sbin/ifup -v --force "$WPA_IFACE=$WPA_LOGICAL_IFACE"
+		else
+			/sbin/ifup -v "$WPA_IFACE=$WPA_LOGICAL_IFACE"
+		fi
 		IFUP_RETVAL="$?"
 
 		ifupdown_unlock
