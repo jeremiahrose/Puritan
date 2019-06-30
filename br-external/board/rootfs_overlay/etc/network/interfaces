@@ -2,8 +2,12 @@ auto lo
 iface lo inet loopback
 
 auto wlan0
-iface wlan0 inet static
-  address 10.222.222.1
-  netmask 255.0.0.0
+iface wlan0 inet manual
   pre-up wpa_supplicant -D nl80211 -i wlan0 -c /etc/wpa_supplicant.conf -B
   post-down killall -q wpa_supplicant
+
+iface dhcp_server inet static
+  address 10.222.222.1
+  netmask 255.0.0.0
+
+iface dhcp_client inet dhcp
