@@ -3,6 +3,7 @@ iface lo inet loopback
 
 auto wlan0
 iface wlan0 inet manual
+  wpa-driver nl80211
   wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
 
 iface dhcp_server inet static
