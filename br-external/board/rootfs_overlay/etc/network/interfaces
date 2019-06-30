@@ -3,12 +3,12 @@ iface lo inet loopback
 
 auto wlan0
 iface wlan0 inet manual
-  wpa-roam /etc/wpa_supplicant.conf
+  wpa-roam /etc/wpa_supplicant/wpa_supplicant.conf
 
 iface dhcp_server inet static
   address 10.222.222.1
   netmask 255.0.0.0
 
 iface dhcp_client inet dhcp
-  pre-up /sbin/udhcpc -R -b -p /var/run/udhcpc.wlan0.pid -i wlan0
+  pre-up /sbin/udhcpc -S -R -b -p /var/run/udhcpc.wlan0.pid -i wlan0
   post-down killall -q udhcpc
