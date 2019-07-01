@@ -961,7 +961,7 @@ ifup () {
 
 		ifupdown_lock
 
-		/sbin/ifup --force -v "$WPA_IFACE=$WPA_LOGICAL_IFACE"
+		/sbin/ifup -f -v "$WPA_IFACE=$WPA_LOGICAL_IFACE"
 
 		IFUP_RETVAL="$?"
 
