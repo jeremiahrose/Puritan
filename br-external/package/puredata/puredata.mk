@@ -12,6 +12,7 @@ PUREDATA_POST_EXTRACT_HOOKS += PUREDATA_POST_EXTRACT_FIXUP
 define PUREDATA_POST_INSTALL_FIXUP
 	rm -f output/target/usr/lib/pd/bin/pd
 	ln -s /usr/bin/pd output/target/usr/lib/pd/bin/pd
+	mkdir --parents output/target/home/jez
 	ln -s /tmp output/target/home/jez/.config
 endef
 PUREDATA_POST_INSTALL_TARGET_HOOKS += PUREDATA_POST_INSTALL_FIXUP
