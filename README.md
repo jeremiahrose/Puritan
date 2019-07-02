@@ -6,7 +6,9 @@
 - Stripped down Kernel: Boots to Pure Data in about 6 seconds
 - Instant off: Power can be removed without shutdown
 - Corruption proof: Uses a read-only squashfs root filesystem
-- Automatically provides a wifi hotspot with ssh login
+- Automatically connects to wifi networks & provides a wifi hotspot
+- Pure Data patch stored on accessible FAT32 partition on SD card
+- ssh login with X forwarding to edit patch
 - Designed for use with the HifiBerry DAC (loads drivers on boot)
 
 ###### To do:
@@ -16,6 +18,7 @@
 ###### How to compile:
 
 Note: you are building an operating system from scratch! You will need about 10GB of hard drive space, a fast internet connection, and a decent desktop computer or server running linux (this guide is for Debian/Ubuntu - other distributions will work but you will need to figure out the dependencies yourself).
+
 0. Install dependencies:
 
 ```
@@ -76,16 +79,17 @@ every time you use the Buildroot and Kernel configuration tools respectively.
 
 ###### Note on branches:
 After changing branches, running git pull, or otherwise changing the contents of
-br-external/configs, the buildroot configuration **must** be updated again with:
+br-external/configs, the buildroot configuration will be updated again with:
 ```
 make BR2_EXTERNAL=../br-external tpt6_defconfig
 ```
+This should be done automatically by git.
 
 ###### How to use:
 
-You can change the Pure Data patch that is run at boot by replacing this file:
+You can change the Pure Data patch that is run at boot by replacing the 'patch.pd' file on the FAT32 partition on the SD card, or at build time by replacing this file:
 ```
-br-external/board/rootfs_overlay/home/jez/test.pd
+br-external/board/patch.pd
 ```
 If you want to use a different file, simply adjust 
 ```
