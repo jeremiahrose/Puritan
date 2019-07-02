@@ -14,6 +14,7 @@ endef
 
 define DISIS_SPI_INSTALL_TARGET_CMDS
 	$(INSTALL) -D -m 0755 $(@D)/disis_spi.pd_linux $(TARGET_DIR)/usr/local/lib/pd-externals/disis_spi.pd_linux
+        $(INSTALL) -D -m 0755 $(@D)/disis_spi-help.pd $(TARGET_DIR)/usr/local/lib/pd-externals/disis_spi-help.pd
 endef
 
 $(eval $(generic-package))
