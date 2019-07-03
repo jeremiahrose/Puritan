@@ -12,9 +12,9 @@ case "${1}" in
 	/sbin/modprobe spi-gpio >/dev/null
 	/sbin/modprobe spi-bitbang >/dev/null
 	/sbin/modprobe spidev >/dev/null
-	# Do I need to change the permissions?
-	#chgrp -R audio /dev/snd
-	#chmod -R g+rw /dev/snd
+	# Allow access for everyone
+	chmod a+rw /dev/spidev0.0
+	chmod a+rw /dev/spidev0.1
 	;;
 
     *)
