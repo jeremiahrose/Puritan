@@ -14,6 +14,7 @@
 ###### To do:
 - Enable writing to the filesystem in controlled circumstances to install packages
 - Reduce boot time to 3 seconds or less
+Pull requests welcomed, especially ones that improve boot time!
 
 ###### How to compile:
 
@@ -55,7 +56,7 @@ make
 It will take between 40 minutes and 3 hours depending on your system and internet connection.
 After it is finished, the SD card image found in `output/images` can be flashed directly to your SD and booted up on the RPi0w!
 
-Note that all `make` commands should be run from the `buildroot` directory, and all `git` commands should be run from the `RPi0w-PD` directory.
+Note that all `make` commands should be run from the `buildroot` directory, and all `git` commands should be run from the `Puritan` directory.
 
 To make changes to the Buildroot configuration run
 ```
