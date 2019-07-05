@@ -1,2 +1,2 @@
-source "$BR2_EXTERNAL_TPT6_PATH/package/puredata/Config.in"
-source "$BR2_EXTERNAL_TPT6_PATH/package/disis_spi/Config.in"
+source "$BR2_EXTERNAL_PURITAN_PATH/package/puredata/Config.in"
+source "$BR2_EXTERNAL_PURITAN_PATH/package/disis_spi/Config.in"

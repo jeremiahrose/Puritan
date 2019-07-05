@@ -1,6 +1,6 @@
-# RPi0w-PD
+# Puritan
 
-## A power-loss resistant, fast boot embedded linux for running Pure Data on the Raspberry Pi Zero W.
+## A corruption resistant, fast boot embedded linux for running Pure Data on the Raspberry Pi Zero W.
 
 ###### Features:
 - Stripped down Kernel: Boots to Pure Data in about 6 seconds
@@ -96,3 +96,19 @@ If you want to use a different file, simply adjust
 br-external/board/rootfs_overlay/etc/init.d/S26puredata
 ```
 to point to the new file and run `make` to rebuild the system (it will run much quicker than the initial build).
+
+The default username is `jez` and the password is `password`. You should change these before building by editing
+```
+br-external/board/users.config
+```
+root privileges can be accessed with `sudo` and password `password`. If your Pi is going to be exposed to the internet, I would recommend disabling password access and instead adding your laptop's public ssh key to 
+```
+br-external/board/rootfs_overlay/home/jez/.ssh/authorized_keys
+```
+which will enable secure password-less login.
+
+Puritan will by default create a wifi hotspot with ssid `Puritan`. If you want it to connect to your wifi network instead, edit
+```
+br-external/board/rootfs_overlay/etc/wpa_supplicant/wpa_supplicant.conf
+```
+and add your wifi details there.

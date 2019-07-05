@@ -10,7 +10,7 @@ gpu_mem_256=100 gpu_mem_512=100 gpu_mem_1024=100
 # fixes rpi3 ttyAMA0 serial console
 dtoverlay=pi3-miniuart-bt
 
-# Enable devices for tpt6 - 21st June
+# Enable devices for Puritan
 #dtparam=i2c_arm=on
 #dtparam=i2s=on
 dtparam=spi=on
