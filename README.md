@@ -28,13 +28,13 @@ sudo apt install sed make binutils build-essential gcc g++ bash patch gzip bzip2
 1. Clone the repository: 
 
 ```
-git clone https://github.com/jeremiahrose/RPi0w-PD.git
+git clone https://github.com/jeremiahrose/Puritan.git
 ```
 
 2. Initialise submodules to download the Buildroot source:
 
 ```
-cd RPi0w-PD
+cd Puritan
 git submodule init
 git submodule update
 ```
@@ -43,7 +43,7 @@ git submodule update
 
 ```
 cd buildroot
-make BR2_EXTERNAL=../br-external tpt6_defconfig
+make BR2_EXTERNAL=../br-external puritan_defconfig
 ```
 
 The project is now ready for building and/or further customisation!
@@ -81,7 +81,7 @@ every time you use the Buildroot and Kernel configuration tools respectively.
 After changing branches, running git pull, or otherwise changing the contents of
 br-external/configs, the buildroot configuration will be updated again with:
 ```
-make BR2_EXTERNAL=../br-external tpt6_defconfig
+make BR2_EXTERNAL=../br-external puritan_defconfig
 ```
 This should be done automatically by git.
 
@@ -107,7 +107,7 @@ br-external/board/rootfs_overlay/home/jez/.ssh/authorized_keys
 ```
 which will enable secure password-less login.
 
-Puritan will by default create a wifi hotspot with ssid `Puritan`. If you want it to connect to your wifi network instead, edit
+Puritan will by default create a wifi hotspot with ssid `Puritan` and key `password`. If you want it to connect to your wifi network instead, edit
 ```
 br-external/board/rootfs_overlay/etc/wpa_supplicant/wpa_supplicant.conf
 ```
