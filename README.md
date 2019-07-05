@@ -81,11 +81,11 @@ every time you use the Buildroot and Kernel configuration tools respectively.
 
 ###### Note on branches:
 After changing branches, running git pull, or otherwise changing the contents of
-br-external/configs, the buildroot configuration will be updated again with:
+br-external/configs, the buildroot configuration **must** be updated again with:
 ```
 make BR2_EXTERNAL=../br-external puritan_defconfig
 ```
-This should be done automatically by git.
+If you add this to your `.git/hooks/post-checkout` file, git will do it automatically for you.
 
 ###### How to use:
 
